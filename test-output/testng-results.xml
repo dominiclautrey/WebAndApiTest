@@ -2,19 +2,19 @@
 <testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-25T19:29:54 GST" name="Default suite" finished-at="2022-04-25T19:29:55 GST" duration-ms="1661">
+  <suite started-at="2022-04-25T20:41:26 GST" name="Default suite" finished-at="2022-04-25T20:41:26 GST" duration-ms="947">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-04-25T19:29:54 GST" name="Default test" finished-at="2022-04-25T19:29:55 GST" duration-ms="1661">
+    <test started-at="2022-04-25T20:41:26 GST" name="Default test" finished-at="2022-04-25T20:41:26 GST" duration-ms="947">
       <class name="naggaroTest.TestRunnerTest">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" started-at="2022-04-25T19:29:54 GST" name="setUpClass" finished-at="2022-04-25T19:29:55 GST" duration-ms="1091" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" started-at="2022-04-25T20:41:26 GST" name="setUpClass" finished-at="2022-04-25T20:41:26 GST" duration-ms="617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" started-at="2022-04-25T19:29:55 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T19:29:55 GST" duration-ms="402" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" started-at="2022-04-25T20:41:26 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T20:41:26 GST" duration-ms="214" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -27,18 +27,67 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at naggaroTest.Step_def_1.user_is_on_jquery_webpage(Step_def_1.java:32)
-at ✽.User is on jquery webpage(file:///E:/Aaron/eclipse-workspace/NagarroProject/src/test/resources/naggaroTest/WebUiTest.feature:4)
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:102)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" started-at="2022-04-25T19:29:55 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T19:29:55 GST" duration-ms="12" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" started-at="2022-04-25T20:41:26 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T20:41:26 GST" duration-ms="11" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -51,18 +100,67 @@ at ✽.User is on jquery webpage(file:///E:/Aaron/eclipse-workspace/NagarroProje
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at naggaroTest.Step_def_1.user_is_on_jquery_webpage(Step_def_1.java:32)
-at ✽.User is on jquery webpage(file:///E:/Aaron/eclipse-workspace/NagarroProject/src/test/resources/naggaroTest/WebUiTest.feature:4)
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:102)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" started-at="2022-04-25T19:29:55 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T19:29:55 GST" duration-ms="2" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" started-at="2022-04-25T20:41:26 GST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-25T20:41:26 GST" duration-ms="9" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -75,18 +173,67 @@ at ✽.User is on jquery webpage(file:///E:/Aaron/eclipse-workspace/NagarroProje
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at naggaroTest.Step_def_1.user_is_on_jquery_webpage(Step_def_1.java:32)
-at ✽.User is on jquery webpage(file:///E:/Aaron/eclipse-workspace/NagarroProject/src/test/resources/naggaroTest/WebUiTest.feature:4)
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step "User is on jquery webpage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("User is on jquery webpage")
+public void user_is_on_jquery_webpage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:102)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:naggaroTest.TestRunnerTest@2753316c]" started-at="2022-04-25T19:29:55 GST" name="tearDownClass" finished-at="2022-04-25T19:29:55 GST" duration-ms="53" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:naggaroTest.TestRunnerTest@79d3473e]" started-at="2022-04-25T20:41:26 GST" name="tearDownClass" finished-at="2022-04-25T20:41:26 GST" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
