@@ -15,7 +15,7 @@ import io.cucumber.testng.CucumberOptions;
 		},
 		features= {"src/test/resources/naggaroTest"},
 		
-		glue= {"src/test/java"}
+		glue= {"naggaroTest","hooks"}
 		//tags="@naggaroTest"
 		
 		)

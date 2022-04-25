@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import factory.DriverFactory;
@@ -27,42 +28,51 @@ public class Step_def_1 {
 	@Given("User is on jquery webpage")
 	public void user_is_on_jquery_webpage() throws InterruptedException {
 		
-		System.out.println(driver);
-		driver=  DriverFactory.initializeDriver();
-		driver.get("https://jqueryui.com/");
+		driver=  DriverFactory.getDriver();
+		new droppablePage(driver).load("https://jqueryui.com/");
+		//driver.get("https://jqueryui.com/");
 		
 		 	}
 
 	@When("User clicks on the droppable field on the left menu option")
 	public void i_click_on_the_droppable_field_on_the_left_menu_option() {
-		driver.findElement((By) droppablePage.droppable).click();
+		new droppablePage(driver).clickDroppable();
+		
 	}
 
 	@Then("the user is naviagted to the droppable page")
 	public void the_user_is_naviagted_to_the_droppable_page() {
-		String actualTitle= droppablePage.dropTitle.getText();
-	     	    Assert.assertEquals("Droppable", actualTitle);
-	    System.out.println("Title on this page is"+  actualTitle);
+		droppablePage droppable = new droppablePage(driver);
+	     	    Assert.assertEquals("Droppable", droppable.drop_title());
+	    System.out.println("Title on this page is"+  droppable.drop_title());
 	}
 
 		@And ("the user peforms the drag and drop operation")
 	public void the_user_peforms_the_drag_and_drop_operation() throws InterruptedException {
-			driver.switchTo().frame(droppablePage.dropFrame);
+			WebElement frame = driver.findElement(By.xpath("//*[@id=\"content\"]/iframe"));
+			 driver.switchTo().frame(frame);
+			WebElement from = driver.findElement(By.id("draggable"));
+			 
+			WebElement to = driver.findElement(By.id("droppable"));	 
 			Actions action = new Actions(driver);
 			//Perform drag and drop
-			action.dragAndDrop(droppablePage.fromBox, droppablePage.dropBox).perform();
+			action.dragAndDrop(from, to).perform();
 		}
 
 	@Then("the drop here lable changes to Dropped")
 	public void the_drop_here_lable_changes_to() throws InterruptedException {
-		String SuccesTitle = droppablePage.droppped.getText();
+		
+		WebElement to = driver.findElement(By.xpath("(//p[normalize-space()='Dropped!'])[1]"));	
+		String textTo = to.getText();
 
-		if(SuccesTitle.equals("Dropped!")) {
+		if(textTo.equals("Dropped!")) {
 			System.out.println("PASS: Source is dropped to target as expected");
 		}else {
 			System.out.println("FAIL: Source couldn't be dropped to target as expected");
 		}
-	driver.close();
+	
+		driver.close();
+	
 	}
 
 	//Scenario#2
